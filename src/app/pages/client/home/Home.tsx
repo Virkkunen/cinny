@@ -58,6 +58,7 @@ import { useClosedNavCategoriesAtom } from '../../../state/hooks/closedNavCatego
 import { stopPropagation } from '../../../utils/keyboard';
 import { useSetting } from '../../../state/hooks/settings';
 import { settingsAtom } from '../../../state/settings';
+import { mDirectAtom } from '../../../state/mDirectList';
 import {
   getRoomNotificationMode,
   useRoomsNotificationPreferencesContext,
@@ -202,6 +203,7 @@ export function Home() {
   const notificationPreferences = useRoomsNotificationPreferencesContext();
   const roomToUnread = useAtomValue(roomToUnreadAtom);
   const navigate = useNavigate();
+  const mDirects = useAtomValue(mDirectAtom);
 
   const selectedRoomId = useSelectedRoom();
   const createRoomSelected = useHomeCreateSelected();
@@ -344,6 +346,8 @@ export function Home() {
                           notificationPreferences,
                           room.roomId
                         )}
+                        showAvatar
+                        direct={mDirects.has(roomId)}
                       />
                     </VirtualTile>
                   );
