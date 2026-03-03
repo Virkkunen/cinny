@@ -186,7 +186,7 @@ export function SendRoomEvent({ type, stateKey, requestClose }: SendRoomEventPro
             <TextAreaComponent
               ref={textAreaRef}
               name="contentTextArea"
-              style={{ fontFamily: 'monospace' }}
+              style={{ fontFamily: 'Fira Code' }}
               onKeyDown={handleKeyDown}
               resize="None"
               spellCheck="false"
