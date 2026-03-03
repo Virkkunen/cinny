@@ -1,4 +1,5 @@
 # Cinny
+
 <p>
     <a href="https://github.com/ajbura/cinny/releases">
         <img alt="GitHub release downloads" src="https://img.shields.io/github/downloads/ajbura/cinny/total?logo=github&style=social"></a>
@@ -13,26 +14,39 @@
 </p>
 
 A Matrix client focusing primarily on simple, elegant and secure interface. The main goal is to have an instant messaging application that is easy on people and has a modern touch.
+
 - [Roadmap](https://github.com/orgs/cinnyapp/projects/1)
 - [Contributing](./CONTRIBUTING.md)
 
 <img align="center" src="https://raw.githubusercontent.com/cinnyapp/cinny-site/main/assets/preview2-light.png" height="380">
 
+## Changes in this fork:
+
+- The home tab now shows all rooms and chats instead of just orphaned ones (rooms outside spaces)
+- Displays room avatars in the room lists
+
+### Todo:
+
+- [ ] Sort rooms/chats by activity in the home tab when the divider is expanded
+- [ ] Make the Inbox tab functional for homeservers without the `/_matrix/client/v3/notifications` endpoint
+
 ## Getting started
+
 The web app is available at [app.cinny.in](https://app.cinny.in/) and gets updated on each new release. The `dev` branch is continuously deployed at [dev.cinny.in](https://dev.cinny.in) but keep in mind that it could have things broken.
 
 You can also download our desktop app from the [cinny-desktop repository](https://github.com/cinnyapp/cinny-desktop).
 
 ## Self-hosting
+
 To host Cinny on your own, simply download the tarball from [GitHub releases](https://github.com/cinnyapp/cinny/releases/latest), and serve the files from `dist/` using your preferred webserver. Alternatively, you can just pull the docker image from [DockerHub](https://hub.docker.com/r/ajbura/cinny) or [GitHub Container Registry](https://github.com/cinnyapp/cinny/pkgs/container/cinny).
 
 * The default homeservers and explore pages are defined in [`config.json`](config.json).
-
 * You need to set up redirects to serve the assests. Example configurations; [netlify](netlify.toml), [nginx](contrib/nginx/cinny.domain.tld.conf), [caddy](contrib/caddy/caddyfile).
-    * If you have trouble configuring redirects you can [enable hash routing](config.json#L35) — the url in the browser will have a `/#/` between the domain and open channel (ie. `app.cinny.in/#/home/` instead of `app.cinny.in/home/`) but you won't have to configure your webserver.
 
+  * If you have trouble configuring redirects you can [enable hash routing](config.json#L35) — the url in the browser will have a `/#/` between the domain and open channel (ie. `app.cinny.in/#/home/` instead of `app.cinny.in/home/`) but you won't have to configure your webserver.
 * To deploy on subdirectory, you need to rebuild the app youself after updating the `base` path in [`build.config.ts`](build.config.ts).
-    * For example, if you want to deploy on `https://cinny.in/app`, then set `base: '/app'`.
+
+  * For example, if you want to deploy on `https://cinny.in/app`, then set `base: '/app'`.
 
 <details><summary><b>PGP Public Key to verify tarball</b></summary>
 
@@ -79,31 +93,38 @@ mxFo+ioe/ABCufSmyqFye0psX3Sp
 =WtqZ
 -----END PGP PUBLIC KEY BLOCK-----
 ```
+
 </details>
 
 ## Local development
+
 > [!TIP]
 > We recommend using a version manager as versions change very quickly. You will likely need to switch between multiple Node.js versions based on the needs of different projects you're working on. [NVM on windows](https://github.com/coreybutler/nvm-windows#installation--upgrades) on Windows and [nvm](https://github.com/nvm-sh/nvm) on Linux/macOS are pretty good choices. Recommended nodejs version is Krypton LTS (v24.13.1).
 
 Execute the following commands to start a development server:
+
 ```sh
 npm ci # Installs all dependencies
 npm start # Serve a development version
 ```
 
 To build the app:
+
 ```sh
 npm run build # Compiles the app into the dist/ directory
 ```
 
 ### Running with Docker
+
 This repository includes a Dockerfile, which builds the application from source and serves it with Nginx on port 80. To
 use this locally, you can build the container like so:
+
 ```
 docker build -t cinny:latest .
 ```
 
 You can then run the container you've built with a command similar to this:
+
 ```
 docker run -p 8080:80 cinny:latest
 ```
