@@ -84,7 +84,7 @@ export const MessageBase = recipe({
     DefaultReset,
     {
       marginTop: SpacingVar,
-      padding: `${config.space.S100} ${config.space.S200} ${config.space.S100} ${config.space.S400}`,
+      padding: `${config.space.S0} ${config.space.S200} ${config.space.S100} ${config.space.S400}`,
       borderRadius: `0 ${config.radii.R400} ${config.radii.R400} 0`,
     },
   ],
