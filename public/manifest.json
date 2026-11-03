@@ -3,12 +3,12 @@
   "short_name": "Cinny",
   "description": "Yet another matrix client",
   "dir": "auto",
-  "lang": "en-US",
+  "lang": "en-GB",
   "display": "standalone",
   "orientation": "portrait",
   "start_url": "./",
-  "background_color": "#fff",
-  "theme_color": "#fff",
+  "background_color": "#11111b",
+  "theme_color": "#1e1e2e",
   "icons": [
     {
       "src": "./public/android/android-chrome-36x36.png",

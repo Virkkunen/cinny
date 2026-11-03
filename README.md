@@ -1,29 +1,6 @@
-# Cinny
-
-<p>
-    <a href="https://github.com/ajbura/cinny/releases">
-        <img alt="GitHub release downloads" src="https://img.shields.io/github/downloads/ajbura/cinny/total?logo=github&style=social"></a>
-    <a href="https://hub.docker.com/r/ajbura/cinny">
-        <img alt="DockerHub downloads" src="https://img.shields.io/docker/pulls/ajbura/cinny?logo=docker&style=social"></a>
-    <a href="https://fosstodon.org/@cinnyapp">
-        <img alt="Follow on Mastodon" src="https://img.shields.io/mastodon/follow/106845779685925461?domain=https%3A%2F%2Ffosstodon.org&logo=mastodon&style=social"></a>
-    <a href="https://twitter.com/intent/follow?screen_name=cinnyapp">
-        <img alt="Follow on Twitter" src="https://img.shields.io/twitter/follow/cinnyapp?logo=twitter&style=social"></a>
-    <a href="https://cinny.in/#sponsor">
-        <img alt="Sponsor Cinny" src="https://img.shields.io/opencollective/all/cinny?logo=opencollective&style=social"></a>
-</p>
+# Cinny, fixed
 
 A Matrix client focusing primarily on simple, elegant and secure interface. The main goal is to have an instant messaging application that is easy on people and has a modern touch.
-
-- [Roadmap](https://github.com/orgs/cinnyapp/projects/1)
-- [Contributing](./CONTRIBUTING.md)
-
-> [!IMPORTANT]
-> We are currently in the process of [replacing] the matrix-js-sdk with our
-> own SDK. As a result, we will not be accepting any pull requests until
-> further notice. Thank you for your understanding.
-
-[replacing]: https://github.com/cinnyapp/cinny/issues/257#issuecomment-3714406704
 
 <img align="center" src="https://raw.githubusercontent.com/cinnyapp/cinny-site/main/assets/preview2-light.png" height="380">
 
@@ -31,6 +8,7 @@ A Matrix client focusing primarily on simple, elegant and secure interface. The 
 
 - The home tab now shows all rooms and chats instead of just orphaned ones (rooms outside spaces)
 - Displays room avatars in the room lists
+- Removes any recommendation of Tuwunel rooms
 
 ### Todo:
 
@@ -41,19 +19,15 @@ A Matrix client focusing primarily on simple, elegant and secure interface. The 
 
 The web app is available at [app.cinny.in](https://app.cinny.in/) and gets updated on each new release. The `dev` branch is continuously deployed at [dev.cinny.in](https://dev.cinny.in) but keep in mind that it could have things broken.
 
-You can also download our desktop app from the [cinny-desktop repository].
-
-[app.cinny.in]: https://app.cinny.in
-[dev.cinny.in]: https://dev.cinny.in
-[cinny-desktop repository]: https://github.com/cinnyapp/cinny-desktop
+You can also download our desktop app from the [cinny-desktop repository][cinny-desktop repository].
 
 ## Contributing and Developing
 
 If you have any ideas, issues, etc. regarding Cinny, or would like to
 contribute to Cinny through pull requests, please check out our
-["Contributing to Cinny"](CONTRIBUTING.md) document. Those who would like
+[&#34;Contributing to Cinny&#34;](CONTRIBUTING.md) document. Those who would like
 to get involved with Cinny's development as well should also read the
-["Developing Cinny"](HACKING.md) document for more technical details.
+[&#34;Developing Cinny&#34;](HACKING.md) document for more technical details.
 
 ## Self-hosting
 
@@ -150,3 +124,8 @@ docker run -p 8080:80 cinny:latest
 ```
 
 This will forward your `localhost` port 8080 to the container's port 80. You can visit the app in your browser by navigating to `http://localhost:8080`.
+
+[replacing]: https://github.com/cinnyapp/cinny/issues/257#issuecomment-3714406704
+[app.cinny.in]: https://app.cinny.in
+[dev.cinny.in]: https://dev.cinny.in
+[cinny-desktop repository]: https://github.com/cinnyapp/cinny-desktop
